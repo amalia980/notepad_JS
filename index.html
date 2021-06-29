@@ -9,16 +9,20 @@
 </head>
 <body>
 
-    <form id="form">
-        <input type="text" name="title" id="title">
-        <input type="text" name="description" id="description">
+    <h1>Write Note</h1>
 
-        <button id="button">Click Me</button>
+    <form>
+        <input type="text" name="title" placeholder="Enter Title..." id="title">
+        <input type="text" name="note" placeholder="Enter Note..." id="note">
+
+        <button type="submit" name="submit" id="button">SAVE NOTE</button>
     </form>
+
+    </div>
 
     <table id="table">
         <thead>
-            <tr>
+            <tr class="tr">
                 <th>Title</th>
                 <th>Description</th>
                 <th>Date</th>
@@ -30,6 +34,6 @@
         </tbody>
     </table>
     
-    <script src="test2.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

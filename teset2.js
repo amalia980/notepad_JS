@@ -1,35 +1,30 @@
-
-const titleInput = document.createElement('title');
-const noteInput = document.createElement('note');
+const myForm = document.getElementById('form');
+const titleInput = document.createElement('title').value;
+const noteInput = document.createElement('note').value;
 
 const myButton = document.getElementById('button');
 
 const myTbody = document.getElementById('tbody');
+
 
     
 
         myButton.addEventListener('click', function(e) {
             e.preventDefault();
 
-           
-
             //created elements
             const row = document.createElement('tr');
 
             const tdTitle = document.createElement('td');//<td>
-            tdTitle.innerText = titleInput.value;
-
             const tdNote = document.createElement('td');//<td>
-            tdNote.innerText = titleInput.value;
-
             const tdDate = document.createElement('td');//<td>
 
-            /*
-            const myTitle = titleInput.value;
-            const myNote = noteInput.value;
-            tdTitle.innerText = myTitle;
-            tdNote.innerText = myNote;
-*/
+ 
+            tdTitle.innerHTML = titleInput;
+            tdNote.innerHTML = noteInput;
+
+
+
 
             var today = new Date();
             var dd = String(today.getDate()).padStart(2, '0');
