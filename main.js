@@ -24,13 +24,6 @@ const myTbody = document.getElementById('tbody');
 
             const tdDate = document.createElement('td');//<td>
 
-            /*
-            const myTitle = titleInput.value;
-            const myNote = noteInput.value;
-            tdTitle.innerText = myTitle;
-            tdNote.innerText = myNote;
-*/
-
             var today = new Date();
             var dd = String(today.getDate()).padStart(2, '0');
             var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -39,13 +32,22 @@ const myTbody = document.getElementById('tbody');
             today = mm + '/' + dd + '/' + yyyy;
             tdDate.innerHTML = today;
 
-
+            const tdButton = document.createElement('td');//<td>
+            const myButton2 = document.createElement('button');
+            myButton2.textContent = "DELETE";
 
             row.appendChild(tdTitle);
             row.appendChild(tdNote);
-            row.appendChild(tdDate)
+            row.appendChild(tdDate);
+            row.appendChild(tdButton);
+            tdButton.appendChild(myButton2);
 
             myTbody.appendChild(row);
 
+            myButton2.addEventListener("click", function() {
+                myTbody.remove();
+            });
+            
         });
 
+        

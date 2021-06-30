@@ -1,46 +1,42 @@
-const myForm = document.getElementById('form');
-const titleInput = document.createElement('title').value;
-const noteInput = document.createElement('note').value;
+const titleInput = document.createElement('title');
+const noteInput = document.createElement('note');
 
 const myButton = document.getElementById('button');
 
 const myTbody = document.getElementById('tbody');
 
+function whenClicked() {
 
-    
+    // skapar ett <tr> element
+    const row = document.createElement("tr");
 
-        myButton.addEventListener('click', function(e) {
-            e.preventDefault();
+    // skapar ett <td> element
+    const td1 = document.createElement("td");
+    // lagger vi vardet fran <input>
+    // firstname i td elementet
+    td1.innerText = titleInput.value;
 
-            //created elements
-            const row = document.createElement('tr');
+    // skapar ett <td> element
+    const td2 = document.createElement("td");
+    // lagger vi vardet fran <input>
+    // lastName i td elementet
+    td2.innerText = noteInput.value;
 
-            const tdTitle = document.createElement('td');//<td>
-            const tdNote = document.createElement('td');//<td>
-            const tdDate = document.createElement('td');//<td>
+    // skapar ett <td> element
+    //const td3 = document.createElement("td");
+    // lagger vi vardet fran <input>
+    // email i td elementet
+    //td3.innerText = email.value;
 
- 
-            tdTitle.innerHTML = titleInput;
-            tdNote.innerHTML = noteInput;
+    // Vi lagger in alla <td> vi skapat
+    // inuti varan <tr> som vi skapat (table row)
+    row.appendChild(td1);
+    row.appendChild(td2);
+    //row.appendChild(td3);
 
+    // stoppar in varan <tr> vi skapat i varan
+    // tabels <tbody>.
+    myTbody.appendChild(row);
+}
 
-
-
-            var today = new Date();
-            var dd = String(today.getDate()).padStart(2, '0');
-            var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-            var yyyy = today.getFullYear();
-
-            today = mm + '/' + dd + '/' + yyyy;
-            tdDate.innerHTML = today;
-
-
-
-            row.appendChild(tdTitle);
-            row.appendChild(tdNote);
-            row.appendChild(tdDate)
-
-            myTbody.appendChild(row);
-
-        });
-
+myButton.addEventListener("click", whenClicked);
